@@ -1,4 +1,5 @@
-import tool from './module/tool.js';
+import tool from './support/tool.js';
+import apiStructure from './support/api.js';
 
 
 /**
@@ -9,7 +10,12 @@ import tool from './module/tool.js';
  */
 export const debug = ( v, color = false ) => {
     if ( tool.is_array( v ) ) { return console.table( v ); }
-    if ( typeof v === 'boolean' ) { return console.log( `Boolean( %c${v ? 'true' : 'false'}%c )`, `color: ${v ? 'green' : 'red'}`, '' ); }
+    if ( typeof v === 'boolean' ) {
+        return console.log(
+            `Boolean( %c${v ? 'true' : 'false'}%c )`,
+            `color: ${v ? 'green' : 'red'}`, ''
+        );
+    }
     if ( typeof v === 'string' && color ) { return console.log( `%c${v}`, `color: ${color}` ); }
     return console.log( v );
 }
@@ -17,4 +23,5 @@ export const debug = ( v, color = false ) => {
 /**
  * 导出模块
  */
+export { apiStructure };
 export default tool;

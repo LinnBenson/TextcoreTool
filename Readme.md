@@ -44,3 +44,29 @@ npm i textcore-tool
   - tool.arrayStructureContrast( array:数组1, array:数组2 )
   - return Boolean
   - 说明 : 以 数组1 为标准
+
+### API 请求工具
+> /module/api.js
+#### 导出 apiStructure
+- 定义请求工具
+  - const api = setAPI({
+    host: string:请求主机|'';
+    start: function:请求开始执行函数,
+    end: function:请求结束执行函数,
+    error: function:请求错误执行函数,
+    check: function:请求检查执行函数,
+    list: object:API 列表,
+    header: object:附加请求头,
+    timeout: number:加载超时时间|15000,
+  });
+- 发起网络请求
+  - api.send({
+    link: string:请求链接,
+    header: object:请求头设置,
+    post: object:请求数据,
+    check: boolean:结果检查|false,
+    method: function:请求成功执行,
+    error: function:请求错误执行,
+  }, object:其它参数|{} );
+  - return any:请求结果
+  - 说明 post 可为 JSON 或者数组，当此项内容为空时，请求方式为 GET。
