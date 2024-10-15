@@ -1,3 +1,8 @@
+## 安装
+```
+npm i textcore-tool
+```
+
 ### 工具函数
 > /module/tool.js
 #### 导出 tool
