@@ -14,5 +14,14 @@
     },
     "dependencies": {
         "axios": "^1.7.7"
-    }
+    },
+    "devDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LinnBenson/TextcoreTool.git"
+    },
+    "bugs": {
+        "url": "https://github.com/LinnBenson/TextcoreTool/issues"
+    },
+    "homepage": "https://github.com/LinnBenson/TextcoreTool#readme"
 }
