@@ -47,14 +47,14 @@ export default class wsStructure {
         };
         // 连接断开
         this.server.onclose = () => {
+            // 连接结束
+            if ( typeof this.end === 'function' ) { this.end( this ); }
             this.state = false;
             clearInterval( this.heartbeatInt );
             // 自动重连
             if ( this.restart === true ) {
                 setTimeout( () => { this.linkServer(); }, 3000 );
             }
-            // 连接结束
-            if ( typeof this.end === 'function' ) { this.end( this ); }
         };
     }
     /**
