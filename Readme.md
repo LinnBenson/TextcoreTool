@@ -59,6 +59,8 @@ npm i textcore-tool
     header: object:附加请求头,
     timeout: number:加载超时时间|15000,
   });
+- 修改配置信息
+  - api.editConfig( data );
 - 发起网络请求
   - api.send({
     link: string:请求链接,

@@ -6,6 +6,13 @@ export default class apiStructure {
      * 构造函数
      */
     constructor( data = {} ) {
+        this.editConfig( data );
+    }
+    /**
+     * 修改配置信息
+     * @param {object} data 新配置
+     */
+    editConfig( data ) {
         this.host = data['host'] ?? ''; // 请求开始执行函数
         this.start = data['start'] ?? function(){}; // 请求开始执行函数
         this.end = data['end'] ?? function(){}; // 请求结束执行函数
@@ -77,7 +84,7 @@ export default class apiStructure {
             return { data: request.data, error: false };
         }catch ( err ) {
             // 发生错误
-            this.error( err );
+            this.error( err, data );
             // 执行用户任务
             if ( typeof data.error === 'function' ) {
                 data.error( err );
