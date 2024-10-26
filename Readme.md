@@ -83,6 +83,7 @@ npm i textcore-tool
     end: function:结束连接执行函数,
     check: function:收到消息执行函数,
     heartbeatTime: number:心跳检查时间|15000,
+    method: object:回调函数|{},
   });
 - 修改配置信息
   - ws.editConfig( data );

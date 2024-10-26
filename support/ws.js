@@ -21,7 +21,7 @@ export default class wsStructure {
         this.check = data['check'] ?? false; // 请求检查执行函数
         this.heartbeatTime = data['heartbeatTime'] ?? 15000; // 心跳检查时间
         this.restart = true; // 自动重连
-        this.method = {}; // 自动执行内容
+        this.method =  data['method'] ?? {}; // 自动执行内容
     }
     /**
      * 连接服务器
