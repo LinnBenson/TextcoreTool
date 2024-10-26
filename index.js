@@ -1,5 +1,6 @@
 import tool from './support/tool.js';
 import apiStructure from './support/api.js';
+import wsStructure from './support/ws.js';
 
 
 /**
@@ -23,5 +24,5 @@ export const debug = ( v, color = false ) => {
 /**
  * 导出模块
  */
-export { apiStructure };
+export { apiStructure, wsStructure };
 export default tool;

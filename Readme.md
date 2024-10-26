@@ -49,7 +49,7 @@ npm i textcore-tool
 > /module/api.js
 #### 导出 apiStructure
 - 定义请求工具
-  - const api = setAPI({
+  - const api = apiStructure({
     host: string:请求主机|'';
     start: function:请求开始执行函数,
     end: function:请求结束执行函数,
@@ -72,3 +72,29 @@ npm i textcore-tool
   }, object:其它参数|{} );
   - return any:请求结果
   - 说明 post 可为 JSON 或者数组，当此项内容为空时，请求方式为 GET。
+
+### WS 请求工具
+> /module/ws.js
+#### 导出 wsStructure
+- 定义请求工具
+  - const ws = wsStructure({
+    host: string:请求主机|'';
+    start: function:开始连接执行函数,
+    end: function:结束连接执行函数,
+    check: function:收到消息执行函数,
+    heartbeatTime: number:心跳检查时间|15000,
+  });
+- 修改配置信息
+  - ws.editConfig( data );
+- 连接服务器
+  - ws.linkServer()
+- 心跳处理方式
+  - ws.heartbeat();
+- 发送消息到服务器
+  - ws.send( data );
+- 主动关闭连接
+  - ws.close()
+- 添加回调函数
+  - ws.addMethod( name, func )
+- 删除回调函数
+  - ws.addMethod( name )
