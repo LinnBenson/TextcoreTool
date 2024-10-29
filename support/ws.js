@@ -40,10 +40,11 @@ export default class wsStructure {
         };
         // 监听到消息
         this.server.onmessage = ( e ) => {
-            if ( tool.is_json( e.data ) ) { e.data = JSON.parse( e.data ); }
-            this.message = e.data;
+            let data = e.data;
+            if ( tool.is_json( data ) ) { data = JSON.parse( data ); }
+            this.message = data;
             // 收到消息
-            if ( typeof this.check === 'function' ) { this.check( e.data, this ); }
+            if ( typeof this.check === 'function' ) { this.check( data, this ); }
         };
         // 连接断开
         this.server.onclose = () => {
