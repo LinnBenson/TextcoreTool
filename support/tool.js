@@ -161,9 +161,10 @@ const tool = {
      * @param {array} $array2 数组
      * @returns boolean
      */
-    arrayStructureContrast: function( $array1, $array2 ) {
+    arrayStructureContrast: function( $array1, $array2, del = [] ) {
         if ( !tool.is_array( $array1 ) || !tool.is_array( $array2 ) ) { return false; }
         for ( const key in $array1 ) {
+            if ( del.includes( key ) ) { continue; }
             if ( $array1[key] && typeof $array1[key] !== typeof $array2[key] ) {
                 return false;
             }

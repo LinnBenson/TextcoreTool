@@ -41,7 +41,7 @@ npm i textcore-tool
   - return Boolean
   - 说明 : 以 数组1 为标准
 - 数组结构相等比对
-  - tool.arrayStructureContrast( array:数组1, array:数组2 )
+  - tool.arrayStructureContrast( array:数组1, array:数组2, array:跳过检查的键 )
   - return Boolean
   - 说明 : 以 数组1 为标准
 
