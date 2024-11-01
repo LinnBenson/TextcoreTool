@@ -6,13 +6,6 @@ export default class apiStructure {
      * 构造函数
      */
     constructor( data = {} ) {
-        this.editConfig( data );
-    }
-    /**
-     * 修改配置信息
-     * @param {object} data 新配置
-     */
-    editConfig( data ) {
         this.host = data['host'] ?? ''; // 请求开始执行函数
         this.start = data['start'] ?? function(){}; // 请求开始执行函数
         this.end = data['end'] ?? function(){}; // 请求结束执行函数
@@ -21,6 +14,20 @@ export default class apiStructure {
         this.list = data['list'] ?? {}; // API 列表
         this.header = data['header'] ?? {}; // 附加请求头
         this.timeout = data['timeout'] ?? 15000; // 加载超时时间
+    }
+    /**
+     * 修改配置信息
+     * @param {object} data 新配置
+     */
+    editConfig( data ) {
+        this.host = data['host'] ?? this.host; // 请求开始执行函数
+        this.start = data['start'] ?? this.start; // 请求开始执行函数
+        this.end = data['end'] ?? this.end; // 请求结束执行函数
+        this.error = data['error'] ?? this.error; // 请求错误执行函数
+        this.check = data['check'] ?? this.check; // 请求检查执行函数
+        this.list = data['list'] ?? this.list; // API 列表
+        this.header = data['header'] ?? this.header; // 附加请求头
+        this.timeout = data['timeout'] ?? this.timeout; // 加载超时时间
     }
     /**
      * 发起一个网络请求
