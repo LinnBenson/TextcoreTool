@@ -6,7 +6,7 @@ import wsStructure from './support/ws.js';
 /**
  * Console 调试
  * @param {any} v 输出内容
- * @param {String} color 输出颜色
+ * @param {String} color 输出颜sss色
  * @returns boolean
  */
 export const debug = ( v, color = false ) => {
